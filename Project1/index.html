@@ -4,10 +4,27 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="main.js" defer></script>
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+  <body class="bg-yellow-100 h-screen flex items-center justify-center">
+    <!-- Header -->
+    <div id="app container" class="bg-zinc-200 rounded-[40px] shadow-lg p-6 w-[400px]">
+      <h1 class="text-xl font-bold mb-4 text-center">To Do List</h1>
+      <p class="text-center font-semibold text-amber-500 mb-6">Todays Date</p>
+
+    <!-- To Do List -->
+    <div id="todo-list-wrapper" class="flex justify-center items-center space-y-3 rounded-md">
+       <ul id="todo-list" class="flex flex-col gap-4">
+        <!-- Js to add list items here -->
+      </ul>
+    </div>
+
+    <!-- Add Task -->
+     <div id="addTask" class="text-center">
+      <Button id="add-todo" class="fixed bottom-12 right-12 bg-sky-500 text-white p-4 rounded-full shadow-lg">Add Task</Button>
+    </div>
+  </div>
   </body>
 </html>
