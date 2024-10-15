@@ -1,7 +1,7 @@
 import './style.css';
 import interact from 'interactjs';
 
-// Function to create a new to-do item
+//unction to create a new to-do item
 function createToDoItem(id, taskName) {
   const item = document.createElement('li');
   item.classList.add('todo-item', 'flex', 'items-center', 'justify-between', 'gap-8', 'bg-slate-50', 'p-4', 'rounded-lg', 'shadow-md', 'mb-2');
