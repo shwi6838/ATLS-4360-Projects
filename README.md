@@ -12,7 +12,7 @@ This project is a To-Do App that uses Interact.js, a new javascript library I ha
 
 My project is a to-do app, and there are many out there so I first googled to-do list app designs and ideas to get a sense of what has already been done. 
 I really liked this design:
-![App Screenshot](/project1/images/ToDoInspiration.png)
+(/project1/images/ToDoInspiration.png)
 
 I liked how simple and easy to understand it was, and how the colors were used. 
 
@@ -33,7 +33,6 @@ I had a cool idea that instead of a delete button on each task, I could make a t
 This is my design so far:
 
 ### Screenshots
-
-![App Screenshot](/project1/images/Progress1.png)
-![App Screenshot](/project1/images/Progress2.png)
+(project1/images/Progress1.png)
+(project1/images/Progress2.png)
 
