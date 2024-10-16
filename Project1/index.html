@@ -10,12 +10,12 @@
   </head>
   <body class="bg-yellow-100 h-screen flex items-center justify-center">
     <!-- Header -->
-    <div id="app container" class="bg-zinc-200 rounded-[40px] shadow-lg p-6 w-[400px]">
-      <h1 class="text-xl font-bold mb-4 text-center">To Do List</h1>
-      <p class="text-center font-semibold text-amber-500 mb-6">Todays Date</p>
+    <div id="list container" class="relative top-[30px] mb-[50px] bg-yellow-200 rounded-[40px] shadow-lg p-6 w-[500px] max-h-[90vh] overflow-auto">
+      <h1 class="font-varela text-[40px] mb-4 text-center">To Do List</h1>
+      <p id="date" class="text-center font-varela font-semibold text-[20px] text-amber-500 mb-6"></p>
 
     <!-- To Do List -->
-    <div id="todo-list-wrapper" class="flex justify-center items-center space-y-3 rounded-md">
+    <div id="todo-list-wrapper" class="flex justify-center items-center space-y-3 rounded-md top-20">
        <ul id="todo-list" class="flex flex-col gap-4">
         <!-- Js to add list items here -->
       </ul>
