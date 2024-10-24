@@ -76,8 +76,8 @@ function addToDoItem(taskName) {
         // if (!inserted) {
         //   list.appendChild(draggedItem);
         // }
-      }
-    }
+      },
+    },
   });
 }
 
