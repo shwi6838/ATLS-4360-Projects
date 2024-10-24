@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./**/*{.js,ts,jsx,tsx}",
+    "./**/*{.js,}",
   ],
   theme: {
     //add here to override defaults

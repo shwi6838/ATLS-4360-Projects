@@ -11,7 +11,7 @@ document.getElementById('date').textContent = formattedDate;
 //unction to create a new to-do item
 function createToDoItem(id, taskName) {
   const item = document.createElement('li');
-  item.classList.add('todo-item', 'flex', 'items-center', 'justify-between', 'gap-16', 'bg-slate-50', 'p-4', 'rounded-[20px]', 'shadow-md', 'mb-2');
+  item.classList.add('todo-item', 'flex', 'items-center', 'justify-between', 'gap-16', 'bg-slate-50', 'p-4', 'rounded-[20px]', 'shadow-md', 'mb-5');
   item.setAttribute('id', id);
 
   item.innerHTML = `
@@ -51,11 +51,32 @@ function addToDoItem(taskName) {
     ],
     listeners: {
       move: dragMoveListener,
-    },
-    onend: function(event) {
-      const target = event.target;
-      //target.style.transition = 'transform 0.5s';
-      target.style.transform = 'translate(0, 0)';
+      end: function(event) {
+        const target = event.target;
+        // const list = document.getElementById('todo-list');
+        // const items = Array.from(list.querySelectorAll('.todo-item'));
+
+        target.style.transform = '';
+        target.removeAttribute('data-x');
+        target.removeAttribute('data-y');
+
+        // let inserted = false;
+        // items.forEach((item) => {
+        //   const rect = item.getBoundingClientRect();
+        //   if (draggedItem !== item && event.clientY > rect.top && event.clientY < rect.bottom) {
+        //     // Insert dragged item before the current item
+        //     if (event.clientY < rect.top + rect.height / 2) {
+        //       list.insertBefore(draggedItem, item);
+        //     } else {
+        //       list.insertBefore(draggedItem, item.nextSibling);
+        //     }
+        //     inserted = true;
+        //   }
+        // });
+        // if (!inserted) {
+        //   list.appendChild(draggedItem);
+        // }
+      }
     }
   });
 }
@@ -68,25 +89,25 @@ document.getElementById('add-todo').addEventListener('click', function() {
   }
 });
 
-// Drag-and-drop 
+// // Define dropzone
 interact('#todo-list').dropzone({
   accept: '.todo-item',
-  overlap: 0.75,
-  ondrop: function(event) {
-    const draggableElement = event.relatedTarget;
-    const dropzoneElement = event.target;
-    const closestItem = document.elementFromPoint(event.dragEvent.clientX, event.dragEvent.clientY).closest('.todo-item');
+  overlap: 0.5,
+  ondrop(event) {
+    const dragElement = event.relatedTarget;
+    const dropzone = event.target;
+    const ul = document.getElementById('todo-list');
+    const targetIndex = Array.from(ul.children).indexOf(dropzone);
+    const draggedIndex = Array.from(ul.children).indexOf(dragElement);
 
-    if(closestItem) {
-      dropzoneElement.insertBefore(draggableElement, closestItem);
-    } else{
-      dropzoneElement.appendChild(draggableElement);
+    // Swap items in the list if necessary
+    if (targetIndex !== draggedIndex) {
+      ul.insertBefore(dragElement, ul.children[targetIndex]);
     }
-
-    //reset position
-    draggableElement.style.transform = 'translate(0, 0)';
-    draggableElement.setAttribute('data-x', 0);
-    draggableElement.setAttribute('data-y', 0);
+    // reset position
+    dragElement.style.transform = '';
+    dragElement.setAttribute('data-x', 0);
+    dragElement.setAttribute('data-y', 0);
   }
 });
 
@@ -95,12 +116,28 @@ function dragMoveListener(event) {
   const target = event.target;
   const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
   const y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-  console.log(x, y);
-  console.log(event.dx, event.dy);
-  console.log(target.getAttribute('data-x'), target.getAttribute('data-y'));
+  // console.log(x, y);
+  // console.log(event.dx, event.dy);
+  // console.log(target.getAttribute('data-x'), target.getAttribute('data-y'));
 
   target.style.transform = `translate(${x}px, ${y}px)`;
   target.setAttribute('data-x', x);
   target.setAttribute('data-y', y);
 }
 
+// find the closest item
+    // const closestItem = document.elementFromPoint(event.dragEvent.clientX, event.dragEvent.clientY).closest('.todo-item'); 
+    // // insert before or after the closest item
+    // if (closestItem && closestItem !== draggableElement) {
+    //   const draggableRect = draggableElement.getBoundingClientRect();
+    //   const closestItemRect = closestItem.getBoundingClientRect();
+    //   const insertBefore = draggableRect.top < closestItemRect.top;
+    //   if (insertBefore) {
+    //     dropzoneElement.insertBefore(draggableElement, closestItem);
+    //   } else {
+    //     dropzoneElement.insertBefore(draggableElement, closestItem.nextSibling);
+    //   }
+    // } else {
+    //   dropzoneElement.appendChild(draggableElement); // add to the end if nothing is found
+    // }
+    // Find the index of the dragged item and the drop target
