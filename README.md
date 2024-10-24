@@ -8,6 +8,20 @@ This is my projects for my Web Development Class. There are 3 Projects.
 
 This project is a To-Do App that uses Interact.js, a new javascript library I haven't used yet. 
 
+### Proposal
+
+Topic: To Do List / Planner
+
+API/ Library:  Interactjs or Draggablejs
+
+Minimum Viable Product:  A functional , good looking to do list, can add and delete items and move around to order
+
+Stretch Goals:  Add calendar features (momentjs?) to add dates, have a day planner to plan out many days or a whole week, feature to edit items without remaking them, 
+
+Can use media queries to make the list responsive to different screens / accesibilities
+
+I chose this idea because I need to better schedule my time
+
 ### Blog
 
 My project is a to-do app, and there are many out there so I first googled to-do list app designs and ideas to get a sense of what has already been done. 
