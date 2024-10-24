@@ -9,10 +9,10 @@ let formattedDate = today.toLocaleDateString('en-US', options);
 document.getElementById('date').textContent = formattedDate;
 
 //unction to create a new to-do item
-function createToDoItem(id, taskName) {
+function createToDoItem(taskName) {
   const item = document.createElement('li');
   item.classList.add('todo-item', 'flex', 'items-center', 'justify-between', 'gap-16', 'bg-slate-50', 'p-4', 'rounded-[20px]', 'shadow-md', 'mb-5');
-  item.setAttribute('id', id);
+  //item.setAttribute('id', id);
 
   item.innerHTML = `
     <input type="checkbox" class="todo-checkbox h-5 w-5 mr-3">
@@ -36,7 +36,7 @@ function addToDoItem(taskName) {
     return;
   }
   // create item with date as id to keep it unique
-  const item = createToDoItem(Date.now(), taskName);
+  const item = createToDoItem(taskName);
   //console.log(item);
   list.appendChild(item);
 
@@ -57,8 +57,8 @@ function addToDoItem(taskName) {
         // const items = Array.from(list.querySelectorAll('.todo-item'));
 
         target.style.transform = '';
-        target.removeAttribute('data-x');
-        target.removeAttribute('data-y');
+        target.setAttribute('data-x', 0);
+        target.setAttribute('data-y', 0);
 
         // let inserted = false;
         // items.forEach((item) => {
