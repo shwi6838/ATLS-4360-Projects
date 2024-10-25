@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./**/*{.js,}",
+    "./main.js}",
   ],
   theme: {
     //add here to override defaults
@@ -14,6 +14,9 @@ export default {
       fontFamily: {
         varela: ['"Varela Round"', 'sans-serif'],
         caveat: ['"Caveat"', 'cursive'],
+      },
+      backgroundImage: {
+        'cork': "url('./corkboard.jpg')",
       },
     },
   },
