@@ -35,7 +35,6 @@ function addToDoItem(taskName) {
     console.error('To-do list not found');
     return;
   }
-  // create item with date as id to keep it unique
   const item = createToDoItem(taskName);
   //console.log(item);
   list.appendChild(item);
