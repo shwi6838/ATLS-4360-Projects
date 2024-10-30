@@ -44,9 +44,25 @@ So far I have stuck with the defaults for tailwind, but I want to add my own col
 
 I had a cool idea that instead of a delete button on each task, I could make a trash can in a corner and the items can be dragged there to be deleted. I need to look more into interact js to see how to do this.
 
+I had a bit of trouble with dropzones, and it took me many tries to get it to work. The challenge was that I wanted to not only drop items into the list, but to append them to the correct index in the list.
+
 This is my design so far:
 
 ### Screenshots
 ![Progress](Images/Progress1.png)
 ![Progress](Images/Progress2.png)
+![Progress](Images/semi-final.png)
 
+### Reflection
+Overall, I am decently happy with this project. I think it is a good small project I can add to a portfolio. 
+
+Feedback I got was to add some ui/ux experience when a task gets done , like confetti, and I like this idea and would like to experiment more with animations in css.
+Another idea was to simply add more styling, so I added a corkboard background to add to my "sticky note" asthetic.
+I also need to polish and get my dropzones to fully work, and possibly add other lists for completed tasks, etc.
+Someone said I could add colors to the task items, so that they can be organized or grouped better and and add more customization.
+
+I attacked this project by first finding a base library I wanted to use. Then I looked at the library and made a small list of ideas it could be used for. I decided on an interactable to do list because it is a good portfolio project and pretty basic to learn a new library. Since my idea was basic, I added tailwindcss, so I could learn and study that as well. 
+
+I did hit my minimum viable goal, but not much of my stretch goals. The first week I spent a bunch of time figuring out tailwind and making a basic javascript to do list I can add and delete items from. The next week I added interactjs functions, and this took a few tries to get working. I was trying to use a shortcut for my draggable and it made it not functiom correctly at all, but I put in the actual full documentation flow by wrapping it with a listener and it worked perfectly. The dropzone gave me the most trouble as all of the documentation was just about simply dropping to an area and adding styles. Mine needed to read the child contents of the list and reorder the indexes when I dropped an item. This turned out to be a much harder task than I thought. 
+
+New tools I used were interactjs, tailwindcss, vite, and I better understood how to use Node.js!
