@@ -51,7 +51,7 @@ This is my design so far:
 ### Screenshots
 ![Progress](Images/Progress1.png)
 ![Progress](Images/Progress2.png)
-![Progress](Images/semi-final.png)
+![Progress](Images/semi-final.jpg)
 
 ### Reflection
 Overall, I am decently happy with this project. I think it is a good small project I can add to a portfolio. 
