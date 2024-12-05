@@ -1,7 +1,7 @@
 
 # Projects for Web Development
 
-This is my projects for my Web Development Class. There are 3 Projects.
+This is my projects for my Web Development Class. There are 2 Projects. The second one is at https://github.com/SpurSlicer/Front-End-Web-Dev-Project-2/tree/main
 
 
 ## Project 1
